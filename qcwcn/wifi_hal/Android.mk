@@ -67,6 +67,7 @@ LOCAL_C_INCLUDES += \
 	external/libnl/include \
 	$(call include-path-for, libhardware_legacy)/hardware_legacy \
 	external/wpa_supplicant_8/src/drivers \
+	$(TARGET_OUT_HEADERS)/libwpa_client \
 	$(TARGET_OUT_HEADERS)/cld80211-lib
 
 LOCAL_C_INCLUDES += \
@@ -103,7 +104,7 @@ LOCAL_SRC_FILES := \
 LOCAL_MODULE := libwifi-hal-qcom
 LOCAL_VENDOR_MODULE := true
 LOCAL_CLANG := true
-LOCAL_SHARED_LIBRARIES += libnetutils liblog libcld80211
+LOCAL_SHARED_LIBRARIES += libnetutils liblog libwpa_client libcld80211
 LOCAL_SHARED_LIBRARIES += libcrypto
 
 ifneq ($(wildcard external/libnl),)
@@ -152,6 +153,7 @@ LOCAL_C_INCLUDES += \
 	external/libnl/include \
 	$(call include-path-for, libhardware_legacy)/hardware_legacy \
 	external/wpa_supplicant_8/src/drivers \
+	$(TARGET_OUT_HEADERS)/libwpa_client \
 	$(TARGET_OUT_HEADERS)/cld80211-lib
 
 LOCAL_C_INCLUDES += \
@@ -190,7 +192,7 @@ LOCAL_MODULE := libwifi-hal-qcom
 LOCAL_VENDOR_MODULE := true
 LOCAL_CLANG := true
 LOCAL_SHARED_LIBRARIES += libnetutils liblog
-LOCAL_SHARED_LIBRARIES += libdl libcld80211
+LOCAL_SHARED_LIBRARIES += libdl libwpa_client libcld80211
 LOCAL_SHARED_LIBRARIES += libwifi-hal-ctrl
 LOCAL_SHARED_LIBRARIES += libcrypto
 
